@@ -5,13 +5,21 @@ using UnityEngine;
 
 public class LogOnSee
 {
+    /* Les fonctions sont actuellement les meme.
+     * Cependant elles ont ete duppliquees dans le cas
+     * fortement probable ou il serait necessaire deffectuer
+     * un code sur un oeil et pas sur l'autre
+     */
+
     public Vector3 GetLeftEyeFixationPoint(GameObject leftEyeInteractor)
     {
         RaycastHit leftHit;
         Ray leftRay = new Ray(leftEyeInteractor.GetComponent<Transform>().transform.position, Vector3.forward);
         Debug.DrawRay(leftEyeInteractor.transform.position, Vector3.forward * 5, Color.red);
         Debug.Log("Poistion de l'interactor = " + leftEyeInteractor.transform.position);
-        if (Physics.Raycast(leftEyeInteractor.transform.position, leftEyeInteractor.transform.TransformDirection(Vector3.forward),out leftHit,Mathf.Infinity))//leftRay, out leftHit, Mathf.Infinity
+
+        //On trace un rayon fictif et l'on voit s'il rentre en collision avec une entité
+        if (Physics.Raycast(leftEyeInteractor.transform.position, leftEyeInteractor.transform.TransformDirection(Vector3.forward),out leftHit,Mathf.Infinity))
         {
             Debug.Log("Touche ");
             return leftHit.point;

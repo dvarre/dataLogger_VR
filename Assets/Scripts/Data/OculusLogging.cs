@@ -13,6 +13,7 @@ public class OculusLogging
     public string[] datasToLog = new string[73];
     private LogOnSee eyesFixationPoints = new LogOnSee();
 
+    //On liste les capteurs pour l'oculus
     /*** Left controller ***/
     private bool leftPrimary2DAxis;
     private bool leftGrip;
@@ -249,6 +250,11 @@ public class OculusLogging
 
 }
 
+    //On fait une fonction par materiel pour le cas où l'on utiliserait pas forcement tous les appareil
+    /* Pour chaque fonction on prend les capteurs et on regarde si leur valeur est à true ou non.
+     * Si c'est le cas, cela veut dire qu'on veut log la valeur et on get feature associée au capteur puis sa valeur.
+     * Pour finir, on stock la valeur dans la liste
+     */
 
     /*** Controllers ***/
 
@@ -1011,6 +1017,9 @@ public class OculusLogging
 
     }
 
+    /**
+     * Stock dans la bonne liste les datas a l'instant X
+     **/
     public void GetData(InputDevice leftController, InputDevice rightController, InputDevice headMountedDisplay, int listWhereStockData)
     {
         DateTime epochStart = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);

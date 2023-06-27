@@ -5,12 +5,15 @@ using UnityEngine.XR;
 
 public class DataLogger : MonoBehaviour
 {
+   // Les variables locales dont on a besoin pour le code
     private InputDevice rightController;
     private InputDevice leftController;
     private InputDevice headMountedDisplay;
     private OculusLogging oculusLogging;
     private bool isList1ToWrite = true;
 
+
+    // Les variables nécessaires pour commencer à écrire dans le CSV
     [SerializeField]
     private string path;
 
@@ -22,6 +25,10 @@ public class DataLogger : MonoBehaviour
 
     [SerializeField]
     private float timeBeforeLog;
+
+    /* On liste tous les capteurs que l'on a recenssé afin de pouvoir leur attribué la valeur booléenne
+   * correspondante à celle donnée dans DataLoggingEditor
+   */
 
     /*** Left Controller ***/
     [SerializeField]
@@ -184,17 +191,19 @@ public class DataLogger : MonoBehaviour
 
     private void Start()
     {
+        // On vérifie si le temps est bien supérieur à 0
         if (this.timeBeforeLog < 0f)
         {
             Debug.LogError(" Time between each logs in .csv file need to be bigger than 0 ");
         }
         this.timePassed = 0.0f;
-        csvWriter = new CSVWriter();
-        csvWriter.SetPath(path + "/" + fileName + System.DateTime.Now.ToString("yyyyMMddHHmm") + ".csv");
-        csvWriter.WriteHeaderCSV();
+
+        csvWriter = new CSVWriter(); // On initialise l'ecriture du csv
+        csvWriter.SetPath(path + "/" + fileName + System.DateTime.Now.ToString("yyyyMMddHHmm") + ".csv");//on set son path
+        csvWriter.WriteHeaderCSV();// On ecrit l'en-tête des colonnes
 
         oculusLogging = new OculusLogging();
-        
+        //On set les valeurs des manettes à logs a gauche et a droite ainsi que ceux du casque
         oculusLogging.SetLeftControllerBoolValues(
             leftPrimary2DAxis,
             leftGrip,
@@ -277,20 +286,11 @@ public class DataLogger : MonoBehaviour
 
     private void Update()
     {
+        // On recupere le temps qui s'est ecoule depuis 1970  pour pouvoir le log
         System.DateTime epochStart = new System.DateTime(1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
         int cur_time = (int)(System.DateTime.UtcNow - epochStart).TotalSeconds;
 
-        //GameObject leftEyeInteractor = GameObject.Find("LeftEyeInteractor");
-        //RaycastHit leftHit;
-        //Ray leftRay = new Ray(transform.position, Vector3.forward);
-
-        //if (Physics.Raycast(leftRay, out leftHit))
-        //{
-        //    Debug.Log("Touché ");
-        //    Debug.Log(leftHit.point);
-        //}
-
-
+        // On set les inputs
         if (!rightController.isValid)
         {
             InitializeOculusInputs(InputDeviceCharacteristics.Controller | InputDeviceCharacteristics.Right, ref rightController);
@@ -304,11 +304,12 @@ public class DataLogger : MonoBehaviour
             InitializeOculusInputs(InputDeviceCharacteristics.HeadMounted, ref headMountedDisplay);
         }
 
+        // On switch entre le moment ou on stock les donnees et celui ou on va ecrire les donnees stockees dans le csv
         timePassed += Time.deltaTime;
         if (timePassed > timeBeforeLog)
         {
             timePassed = 0f;
-
+            // On alterne entre deux listes pour etre sur de ne pas avoir d'ecriture dans la liste en meme temps que la suppression de certaines valeurs
             if (isList1ToWrite)
             {
                 isList1ToWrite = false;

@@ -8,10 +8,10 @@ using UnityEngine;
 public class DataLoggingEditor : Editor
 {
     private int optionSelected = -1;
-    private string[] optionsList = { "Oculus", "Polar H10" };
+    private string[] optionsList = { "Oculus", "Polar H10" }; // Liste des appareils
 
     private int optionOculusSelected = -1;
-    private string[] optionsOculusList = { "Headset", "Left controller", "Right controller" };
+    private string[] optionsOculusList = { "Headset", "Left controller", "Right controller" }; //Listes des materiels de l'oculus
 
     SerializedProperty path;
     SerializedProperty fileName;
@@ -98,6 +98,7 @@ public class DataLoggingEditor : Editor
 
     private void OnEnable()
     {
+        // Permet de bind les valeurs des champs aux variables dans le code
         path = serializedObject.FindProperty("path");
         fileName = serializedObject.FindProperty("fileName");
         timeBeforeLog = serializedObject.FindProperty("timeBeforeLog");
@@ -191,8 +192,8 @@ public class DataLoggingEditor : Editor
         optionSelected = GUILayout.Toolbar(optionSelected, optionsList);
         EditorGUILayout.EndVertical();
 
-        //base.OnInspectorGUI();
-
+        
+        // On fonction de l'onglet choisit, on affiche les caracteristiques des materiels
         if (optionSelected >= 0 && optionSelected < optionsList.Length)
         {
             switch (optionsList[optionSelected])
@@ -217,6 +218,7 @@ public class DataLoggingEditor : Editor
         optionOculusSelected = GUILayout.Toolbar(optionOculusSelected, optionsOculusList);
         EditorGUILayout.EndVertical();
 
+        // En fonction de l'onglet selectionne, on affiche les capteurs voulus
         if (optionOculusSelected >= 0 && optionOculusSelected < optionsOculusList.Length)
         {
             switch (optionsOculusList[optionOculusSelected])

@@ -19,6 +19,8 @@ public class CSVWriter
         {
             string data = "";
 
+            // on ecrit par ligne toutes les datas récoltées dans la colonne correspondante à leur capteur
+
             for (int i = 0; i < dataList.Count; i++)
             {
                 for (int j = 0; j < dataList[0].Length; j++)
@@ -32,6 +34,7 @@ public class CSVWriter
         }
     }
 
+    // Correspond a l'en-tete du fichier csv. On utilise cette fonction uniquement au début pour avoir sur chaque colonne le nom d'un capteur
     public void WriteHeaderCSV()
     {
         using (TextWriter tw = new StreamWriter(path, false))
