@@ -974,7 +974,12 @@ PrefabInstance:
     - target: {fileID: 9075836585513702832, guid: c808caf15a04a64499b3360e246fbf18,
         type: 3}
       propertyPath: TrackingMode
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9075836585513702832, guid: c808caf15a04a64499b3360e246fbf18,
+        type: 3}
+      propertyPath: ApplyPosition
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9075836585513702832, guid: c808caf15a04a64499b3360e246fbf18,
         type: 3}
@@ -1146,6 +1151,16 @@ PrefabInstance:
     - target: {fileID: 9075836585513702832, guid: c808caf15a04a64499b3360e246fbf18,
         type: 3}
       propertyPath: TrackingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9075836585513702832, guid: c808caf15a04a64499b3360e246fbf18,
+        type: 3}
+      propertyPath: ApplyPosition
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9075836585513702832, guid: c808caf15a04a64499b3360e246fbf18,
+        type: 3}
+      propertyPath: ApplyRotation
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9075836585513702832, guid: c808caf15a04a64499b3360e246fbf18,
