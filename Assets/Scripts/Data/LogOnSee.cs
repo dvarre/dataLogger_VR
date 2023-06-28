@@ -29,9 +29,9 @@ public class LogOnSee
     public Vector3 GetRightEyeFixationPoint(GameObject rightEyeInteractor)
     {
         RaycastHit rightHit;
-        Ray rightRay = new Ray(rightEyeInteractor.transform.position, Vector3.forward);
+        Ray rightRay = new Ray(rightEyeInteractor.GetComponent<Transform>().transform.position, Vector3.forward);
 
-        if (Physics.Raycast(rightRay, out rightHit, Mathf.Infinity))
+        if (Physics.Raycast(rightEyeInteractor.transform.position, rightEyeInteractor.transform.TransformDirection(Vector3.forward), out rightHit, Mathf.Infinity))
         {
             return rightHit.point;
         }

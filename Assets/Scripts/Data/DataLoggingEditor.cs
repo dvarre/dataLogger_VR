@@ -212,8 +212,6 @@ public class DataLoggingEditor : Editor
 
     private void Oculus()
     {
-        //EditorGUILayout.HelpBox("Oculus", MessageType.Error);
-
         EditorGUILayout.BeginVertical();
         optionOculusSelected = GUILayout.Toolbar(optionOculusSelected, optionsOculusList);
         EditorGUILayout.EndVertical();
