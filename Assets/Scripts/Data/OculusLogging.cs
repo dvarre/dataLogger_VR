@@ -479,7 +479,7 @@ public class OculusLogging
 
     private void GetRightControllerData(InputDevice rightController)
     {
-        /*** Left Controller ***/
+        /*** Right Controller ***/
 
         if (rightPrimary2DAxis)
         {
@@ -1022,6 +1022,7 @@ public class OculusLogging
      **/
     public void GetData(InputDevice leftController, InputDevice rightController, InputDevice headMountedDisplay, int listWhereStockData)
     {
+        // On recupere le temps qui s'est ecoule depuis 1970  pour pouvoir le log
         DateTime epochStart = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
         int cur_time = (int)(DateTime.UtcNow - epochStart).TotalSeconds;
         this.datasToLog[0] = cur_time.ToString();

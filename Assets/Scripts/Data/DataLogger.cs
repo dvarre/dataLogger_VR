@@ -286,9 +286,6 @@ public class DataLogger : MonoBehaviour
 
     private void Update()
     {
-        // On recupere le temps qui s'est ecoule depuis 1970  pour pouvoir le log
-        System.DateTime epochStart = new System.DateTime(1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
-        int cur_time = (int)(System.DateTime.UtcNow - epochStart).TotalSeconds;
 
         // On set les inputs
         if (!rightController.isValid)
