@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 103221503}
   - component: {fileID: 103221502}
   - component: {fileID: 103221501}
+  - component: {fileID: 103221505}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -220,6 +221,96 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &103221505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103221500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c26eb08de9e4c9d428de3bd391162d0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: C:\Users\furio\Documents\GitHub\dataLogger_VR\Assets\Data
+  fileName: test
+  timeBeforeLog: 1
+  leftPrimary2DAxis: 1
+  leftGrip: 1
+  leftGripButton: 1
+  leftMenuButton: 1
+  leftPrimaryButton: 1
+  leftPrimaryTouch: 1
+  leftSecondaryButton: 1
+  leftSecondaryTouch: 1
+  leftTrigger: 1
+  leftTriggerButton: 1
+  leftPrimary2DAxisClick: 1
+  leftPrimary2DAxisTouch: 1
+  leftIsTracked: 1
+  leftTrackingState: 1
+  leftDevicePosition: 1
+  leftDeviceRotation: 1
+  leftDeviceVelocity: 1
+  leftDeviceAngularVelocity: 1
+  rightPrimary2DAxis: 1
+  rightGrip: 1
+  rightGripButton: 1
+  rightMenuButton: 1
+  rightPrimaryButton: 1
+  rightPrimaryTouch: 1
+  rightSecondaryButton: 1
+  rightSecondaryTouch: 1
+  rightTrigger: 1
+  rightTriggerButton: 1
+  rightPrimary2DAxisClick: 1
+  rightPrimary2DAxisTouch: 1
+  rightIsTracked: 1
+  rightTrackingState: 1
+  rightDevicePosition: 1
+  rightDeviceRotation: 1
+  rightDeviceVelocity: 1
+  rightDeviceAngularVelocity: 1
+  isUserPresence: 1
+  isHeadSetTracked: 1
+  isHeadSetTrackingState: 1
+  isHeadSetDevicePosition: 1
+  isHeadSetDeviceRotation: 1
+  isHeadSetDeviceVelocity: 1
+  isHeadSetDeviceAngularVelocity: 1
+  isHeadSetDeviceAcceleration: 1
+  isHeadSetDeviceAngularAcceleration: 1
+  isHeadSetLeftEyePosition: 1
+  isHeadSetLeftEyeRotation: 1
+  isHeadSetLeftEyeVelocity: 1
+  isHeadSetLeftEyeAngularVelocity: 1
+  isHeadSetLeftEyeAcceleration: 1
+  isHeadSetLeftEyeAngularAcceleration: 1
+  isHeadSetRightEyePosition: 1
+  isHeadSetRightEyeRotation: 1
+  isHeadSetRightEyeVelocity: 1
+  isHeadSetRightEyeAngularVelocity: 1
+  isHeadSetRightEyeAcceleration: 1
+  isHeadSetRightEyeAngularAcceleration: 1
+  isHeadSetCenterEyePosition: 1
+  isHeadSetCenterEyeRotation: 1
+  isHeadSetCenterEyeVelocity: 1
+  isHeadSetCenterEyeAngularVelocity: 1
+  isHeadSetCenterEyeAcceleration: 1
+  isHeadSetCenterEyeAngularAcceleration: 1
+  isHeadSetBatterieLevel: 1
+  isHeadSetColorCameraAcceleration: 1
+  isHeadSetColorCameraAngularAcceleration: 1
+  isHeadSetColorCameraAngularVelocity: 1
+  isHeadSetColorCameraPosition: 1
+  isHeadSetColorCameraRotation: 1
+  isHeadSetColorCameraVelocity: 1
+  isHeadSetFixationPoint: 0
+  isHeadSetLeftEyeOpenAmount: 0
+  isHeadSetRightEyeOpenAmount: 0
+  isLeftFixationPoint: 1
+  isRightFixationPoint: 1
 --- !u!1 &129977403 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4919022601422764145, guid: d93b7e04b48cd7b4fa849695dba2ce9c,
