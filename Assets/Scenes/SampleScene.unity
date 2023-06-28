@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 8314ffe855e0e45b0a2fdbbdfe2010ea, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.10117787, g: 0.2880348, b: 0.5371327, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -259,6 +259,12 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!4 &129977407 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4919022601422791761, guid: d93b7e04b48cd7b4fa849695dba2ce9c,
+    type: 3}
+  m_PrefabInstance: {fileID: 143897011}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &143897011
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -719,7 +725,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 143897014}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1708130387 stripped
 GameObject:
@@ -760,6 +766,12 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!4 &1708130391 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4919022601422791767, guid: d93b7e04b48cd7b4fa849695dba2ce9c,
+    type: 3}
+  m_PrefabInstance: {fileID: 143897011}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1759051254 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7681372687013864540, guid: d93b7e04b48cd7b4fa849695dba2ce9c,
@@ -900,7 +912,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 143897014}
+    m_TransformParent: {fileID: 1708130391}
     m_Modifications:
     - target: {fileID: 204023267, guid: c808caf15a04a64499b3360e246fbf18, type: 3}
       propertyPath: cube
@@ -914,7 +926,7 @@ PrefabInstance:
     - target: {fileID: 6636712755138466743, guid: c808caf15a04a64499b3360e246fbf18,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6636712755138466743, guid: c808caf15a04a64499b3360e246fbf18,
         type: 3}
@@ -1082,7 +1094,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 143897014}
+    m_TransformParent: {fileID: 129977407}
     m_Modifications:
     - target: {fileID: 204023267, guid: c808caf15a04a64499b3360e246fbf18, type: 3}
       propertyPath: cube
@@ -1096,7 +1108,7 @@ PrefabInstance:
     - target: {fileID: 6636712755138466743, guid: c808caf15a04a64499b3360e246fbf18,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6636712755138466743, guid: c808caf15a04a64499b3360e246fbf18,
         type: 3}
