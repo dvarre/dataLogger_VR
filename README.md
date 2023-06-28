@@ -31,14 +31,10 @@ If you want to log eyes data and/or try to track them, you will need to do the f
 4 : On the oculus desktop app go to Settings->General-> OpenXR Runtime-> Set Oculus as active  
 5 : On the oculus desktop app go to Settings->Beta and turn on and agree with Developper runtime features, Pass-through ver Oculus Link, Eye tracking over Oculus link,
 Natural facial expressions over Oculus Link and Share point cloud over Oculus Link  
-6 : Use the phone where your oculus app is install and where oculus is connect. Go to Menu->Devices->Headset settings  
-
-FINIR la ligne du dessus
-
+6 : Use the phone where your oculus app is install and where oculus is connect. Go to Menu->Devices->Headset settings->Developer mode (turn on)  
 7 : Place InteractionRigOVR-FullSynthetic prefab from oculus integration plug-in in your scene  
-8 : On the InteractionRigOVR-FullSynthetic object go to OVRCameraRig and in OVR Manager script turn Body Tracking support, Face Tracking support and eye tracking support  
-to .................... and in Permission Requests onstartup in the same script, turn to true .................
-
+8 : Sometimes you will need to go on the InteractionRigOVR-FullSynthetic object. After go to OVRCameraRig and in OVR Manager script turn Body Tracking support, Face Tracking support and eye tracking support  
+to Supported and in Permission Requests onstartup in the same script, turn to true body, face and eye tracking  
 9 : As the eyeData feature from Unity doesn't seem to work on quest pro, I implement "the eyeTracking feature" from this following Youtube video https://www.youtube.com/watch?v=ZoySn7QlMfQ&pp=ygUScXVlc3QgcHJvIGV5ZSBkYXRh
 As the idea in the video is not perfect, I decided to modified it a little. In order to see users eyes ray, you only have to had EyeInteractor prefab asset to InteractionRigOVR-FullSynthetic->
 OVRCameraRig->TrackingSpace as it is in the example simpleScene I made. (Don't forget to add one EyeInteractor for each eyes and to turn Eye to left and right the proporty of OVR Eye Gaze script of your EyeInteractors.

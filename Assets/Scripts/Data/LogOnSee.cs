@@ -15,8 +15,6 @@ public class LogOnSee
     {
         RaycastHit leftHit;
         Ray leftRay = new Ray(leftEyeInteractor.GetComponent<Transform>().transform.position, Vector3.forward);
-        Debug.DrawRay(leftEyeInteractor.transform.position, Vector3.forward * 5, Color.red);
-        Debug.Log("Poistion de l'interactor = " + leftEyeInteractor.transform.position);
 
         //On trace un rayon fictif et l'on voit s'il rentre en collision avec une entité
         if (Physics.Raycast(leftEyeInteractor.transform.position, leftEyeInteractor.transform.TransformDirection(Vector3.forward),out leftHit,Mathf.Infinity))

@@ -51,24 +51,25 @@ public class EyeTrackingRay : MonoBehaviour
 
         Vector3 rayCastDirection = transform.TransformDirection(Vector3.forward) * rayDistance;
 
-        Debug.DrawRay(transform.position, transform.forward * 1000);
 
         if (Physics.Raycast(transform.position, rayCastDirection, out hit, Mathf.Infinity, layersToInclude))
         {
             
-
-            UnSelect();
-            lineRenderer.startColor = rayColorHoverState;
-            lineRenderer.endColor = rayColorHoverState;
-            var eyeInteractable = hit.transform.GetComponent<EyeInteractable>();
-            eyeInteractables.Add(eyeInteractable);
-            eyeInteractable.IsHovered = true;
-
-            // TODO
-            /* Faire le cube plus petit avec transform.position pour voir si ça se fait sur un oeil ou sur le nez
-             * Tester de faire un système à la main pour résoudre les équations
-             */
-             
+            if(hit.transform.GetComponent<EyeInteractable>() != null)
+            {
+                UnSelect();
+                lineRenderer.startColor = rayColorHoverState;
+                lineRenderer.endColor = rayColorHoverState;
+                var eyeInteractable = hit.transform.GetComponent<EyeInteractable>();
+                eyeInteractables.Add(eyeInteractable);
+                eyeInteractable.IsHovered = true;
+            }
+            else
+            {
+                lineRenderer.startColor = rayColorDefaultState;
+                lineRenderer.endColor = rayColorDefaultState;
+                UnSelect(true);
+            }
         }
         else
         {
